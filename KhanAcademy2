@@ -22,4 +22,4 @@ INSERT INTO orders (customer_id, item, price)
 
 SELECT customers.name, customers.email, orders.item, orders.price from customers LEFT OUTER JOIN orders ON customers.id = orders.customer_id; 
 
-SELECT customers.name, customers.email,  SUM(orders.price) as "total" from customers LEFT OUTER JOIN orders ON customers.id = orders.customer_id GROUP BY customers.id;
+SELECT customers.name, customers.email,  SUM(orders.price) AS "total" from customers LEFT OUTER JOIN orders ON customers.id = orders.customer_id GROUP BY customers.id;
