@@ -30,3 +30,24 @@ insert into EmployeeDemographics Values
 (1016, 'Oscar', 'Martinez', 32, 'Male'),
 (1017, 'Phyllis', 'Vance', 39,'Female'),
 (1018, 'Darryl', 'Philbin',33,'Male')
+
+insert into EmployeeSalary Values 
+(1001, 'Sales Represantative', 45000),
+(1002, 'Receptionist', 36000),
+(1003, 'Sales Representative', 63000),
+(1004, 'Accountant', 47000),
+(1005, 'HR', 50000),
+(1006, 'Regional Manager', 65000),
+(1007, 'Supplier Relations', 41000),
+(1008, 'Sales Representative', 48000),
+(1009, 'Accountant', 42000),
+(1010, 'Quality Assurance', 51000),
+(1011, 'Customer Service Representative', 37000),
+(1012, 'Regional Director of Sales', 58000),
+(1013, 'Receptionist', 34000),
+(1014, 'Temp', 30000),
+(1015, 'HR', 48000),
+(1016, 'Accountant', 50000),
+(1017, 'Sales Representative', 50000),
+(1018, 'Warehouse Foreman', 36000)
+
