@@ -51,3 +51,19 @@ insert into EmployeeSalary Values
 (1017, 'Sales Representative', 50000),
 (1018, 'Warehouse Foreman', 36000)
 
+
+select * from SQLTutorial.dbo.EmployeeDemographics
+where Age >= 30
+
+select * from SQLTutorial.dbo.EmployeeDemographics
+where Age <= 32 and gender = 'Male'
+
+select * from SQLTutorial.dbo.EmployeeDemographics
+where LastName like '%S%'
+
+
+
+select * from SQLTutorial.dbo.EmployeeDemographics
+full outer join SQLTutorial.dbo.EmployeeSalary
+	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
