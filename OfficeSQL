@@ -59,20 +59,31 @@ select * from SQLTutorial.dbo.EmployeeDemographics
 where Age <= 32 and gender = 'Male'
 
 select * from SQLTutorial.dbo.EmployeeDemographics
+where FirstName in ( 'Jim', 'Michael', 'Creed')
+
+
+select * from SQLTutorial.dbo.EmployeeDemographics
 where LastName like '%S%'
 
 select Gender, count (Gender) as GenderCount 
 from SQLTutorial.dbo.EmployeeDemographics
 group by Gender
 
+
 select Gender, count (Gender) as GenderCount 
 from SQLTutorial.dbo.EmployeeDemographics
 where Age> 32
 group by Gender
+order by GenderCount Desc
 
 
 select * from SQLTutorial.dbo.EmployeeDemographics
-where FirstName in ( 'Jim', 'Michael', 'Creed')
+order by Age desc, Gender desc
+  -- OR --
+
+select * from SQLTutorial.dbo.EmployeeDemographics
+order by 4 desc, 5 desc
+
 
 
 
