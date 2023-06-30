@@ -61,6 +61,9 @@ where Age <= 32 and gender = 'Male'
 select * from SQLTutorial.dbo.EmployeeDemographics
 where LastName like '%S%'
 
+select * from SQLTutorial.dbo.EmployeeDemographics
+where FirstName in ( 'Jim', 'Michael', 'Creed')
+
 
 
 select * from SQLTutorial.dbo.EmployeeDemographics
