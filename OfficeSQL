@@ -85,9 +85,25 @@ select * from SQLTutorial.dbo.EmployeeDemographics
 order by 4 desc, 5 desc
 
 
-
-
 select * from SQLTutorial.dbo.EmployeeDemographics
 full outer join SQLTutorial.dbo.EmployeeSalary
 	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 
+
+select EmployeeDemographics.EmployeeID, FirstName, LastName, JobTitle, Salary  from SQLTutorial.dbo.EmployeeDemographics
+inner join SQLTutorial.dbo.EmployeeSalary
+	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+select EmployeeDemographics. EmployeeID, FirstName, LastName, Salary
+from SQLTutorial.dbo.EmployeeDemographics
+inner join SQLTutorial.dbo.EmployeeSalary
+	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+	where FirstName <> 'Michael'
+	Order by Salary desc
+
+select JobTitle, avg(salary)
+from SQLTutorial.dbo.EmployeeDemographics
+inner join SQLTutorial.dbo.EmployeeSalary
+	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+	where JobTitle = 'Sales Representative'
+	group by JobTitle
