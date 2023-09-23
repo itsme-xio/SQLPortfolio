@@ -120,6 +120,14 @@ from SQLTutorial.dbo.EmployeeDemographics
 join SQLTutorial.dbo.EmployeeSalary
 on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 
+SELECT JobTitle, avg(Salary)
+from SQLTutorial.dbo.EmployeeDemographics
+join SQLTutorial.dbo.EmployeeSalary
+	on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+group by JobTitle
+having avg(salary) > 45000
+order by Avg(Salary)
+
 select *
 from SQLTutorial.dbo.EmployeeDemographics
 
