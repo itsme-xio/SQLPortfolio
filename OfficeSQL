@@ -119,3 +119,31 @@ select FirstName, LastName, JobTitle, Salary,
 from SQLTutorial.dbo.EmployeeDemographics
 join SQLTutorial.dbo.EmployeeSalary
 on EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+select *
+from SQLTutorial.dbo.EmployeeDemographics
+
+update SQLTutorial.dbo.EmployeeDemographics
+set Age = 31, Gender = 'Female'
+where EmployeeID = 1012
+
+delete from SQLTutorial.dbo.EmployeeDemographics
+where EmployeeID = 1005
+
+select Demo.EmployeeID, Sal.Salary
+from [SQLTutorial].[dbo].[EmployeeDemographics] Demo
+join [SQLTutorial].[dbo].[EmployeeSalary] as Sal
+	on Demo.EmployeeID =  Sal.EmployeeID
+
+ select FirstName, LastName, Gender, Salary,
+	count(gender) over (Partition BY Gender) as TotalGender
+ from sqltutorial..EmployeeDemographics dem
+join SQLTutorial..EmployeeSalary sal
+	on dem.EmployeeID = sal.EmployeeID
+
+select  Gender, count(gender) 
+ from sqltutorial..EmployeeDemographics dem
+join SQLTutorial..EmployeeSalary sal
+	on dem.EmployeeID = sal.EmployeeID
+group by Gender
+
