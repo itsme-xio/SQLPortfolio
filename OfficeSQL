@@ -239,3 +239,43 @@ from EmployeeErrors
 
 select FirstName, upper(FirstName)
 from EmployeeErrors
+
+Create procedure Temp_Employee
+as 
+create table #temp_employee (
+JobTitle varchar(100),
+EmployeePerJob int,
+AvgAge int,
+AvgSalary int)
+
+insert into #temp_employee
+select JobTitle, COUNT(JobTitle), Avg(Age), Avg(Salary)
+from SQLTutorial. .EmployeeDemographics emp
+join SQLTutorial. .EmployeeSalary sal
+	on emp.EmployeeID =  sal.EmployeeID
+group by JobTitle
+
+select * from #temp_employee
+
+exec Temp_Employee
+
+
+select EmployeeID, Salary, (Select AVG(Salary) from EmployeeSalary) as AllAvgSalary
+from EmployeeSalary
+
+
+select EmployeeID, Salary,  AVG(Salary) over() as AllAvgSalary
+from EmployeeSalary
+
+
+select a.EmployeeID, AllAvgSalary
+From (select EmployeeID, Salary,  AVG(Salary) over() as AllAvgSalary
+from EmployeeSalary) a
+
+
+select EmployeeID, JobTitle, Salary
+from EmployeeSalary
+where EmployeeID in (
+		Select EmployeeID
+		From EmployeeDemographics
+		where Age > 30)
